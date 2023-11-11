@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -21,6 +21,14 @@ public class GamesManager : MonoBehaviour
     };
 
     public Difficulty difficulty = Difficulty.Easy;
+
+    public enum Limit_Type
+    {
+        WarpLimit,
+        FrameLimit
+    };
+
+    public Limit_Type limit_Type = Limit_Type.WarpLimit;
 
     private void Awake()
     {
