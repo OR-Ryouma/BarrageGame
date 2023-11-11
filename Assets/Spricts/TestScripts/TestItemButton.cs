@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,12 +15,12 @@ public class TestItemButton : MonoBehaviour
         _infimationText = transform.parent.parent.parent.Find("Information/Text").GetComponent<Text>();
     }
 
-    //ƒAƒCƒeƒ€ƒ{ƒ^ƒ“‚ª‘I‘ğ‚³‚ê‚½î•ñ‚ğ•\¦
+    //ã‚¢ã‚¤ãƒ†ãƒ ãƒœã‚¿ãƒ³ãŒé¸æŠã•ã‚ŒãŸæƒ…å ±ã‚’è¡¨ç¤º
     public void OnSelected()
     {
         _infimationText.text = _testStatusWindowItemDataBase.GetItemData()[_itemNum].GetItemInfomation();
     }
-    //ƒAƒCƒeƒ€ƒ{ƒ^ƒ“‚©‚çˆÚ“®‚µ‚½‚çî•ñ‚ğíœ
+    //ã‚¢ã‚¤ãƒ†ãƒ ãƒœã‚¿ãƒ³ã‹ã‚‰ç§»å‹•ã—ãŸã‚‰æƒ…å ±ã‚’å‰Šé™¤
     public void OnDeselected()
     {
         _infimationText.text = "";
@@ -35,4 +35,5 @@ public class TestItemButton : MonoBehaviour
     {
         return _itemNum;
     }
+
 }

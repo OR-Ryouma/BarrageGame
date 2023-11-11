@@ -1,9 +1,10 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class TestStatusWindowItemDataBase : MonoBehaviour
 {
+
     public enum Item
     {
         Sword,
@@ -16,11 +17,11 @@ public class TestStatusWindowItemDataBase : MonoBehaviour
 
     void Awake()
     {
-        //ƒAƒCƒeƒ€‚Ì‘Sî•ñ‚Ìì¬
-        _itemLists[0] = new TestStatusWindowItemData(Resources.Load("FlashLight", typeof(Sprite)) as Sprite, "‰ù’†“d“”", Item.Sword, "‚ ‚ê‚Î•Ö—˜‚È‚ ‚½‚è‚ğÆ‚ç‚·ƒ‰ƒCƒg");
-        _itemLists[1] = new TestStatusWindowItemData(Resources.Load("Sword", typeof(Sprite)) as Sprite, "ƒiƒCƒt", Item.Sword, "Ø‚ê–¡‰s‚¢ƒiƒCƒt");
-        _itemLists[2] = new TestStatusWindowItemData(Resources.Load("Sword", typeof(Sprite)) as Sprite, "ƒuƒ[ƒhƒ\[ƒh", Item.Sword, "‘åŒ•");
-        _itemLists[3] = new TestStatusWindowItemData(Resources.Load("Gun", typeof(Sprite)) as Sprite, "ƒnƒ“ƒhƒKƒ“", Item.HandGun, "ˆĞ—Í”²ŒQƒnƒ“ƒhƒKƒ“");
+        //ã‚¢ã‚¤ãƒ†ãƒ ã®å…¨æƒ…å ±ã®ä½œæˆ
+        _itemLists[0] = new TestStatusWindowItemData(Resources.Load("FlashLight", typeof(Sprite)) as Sprite, "æ‡ä¸­é›»ç¯", Item.Sword, "ã‚ã‚Œã°ä¾¿åˆ©ãªã‚ãŸã‚Šã‚’ç…§ã‚‰ã™ãƒ©ã‚¤ãƒˆ");
+        _itemLists[1] = new TestStatusWindowItemData(Resources.Load("Sword", typeof(Sprite)) as Sprite, "ãƒŠã‚¤ãƒ•", Item.Sword, "åˆ‡ã‚Œå‘³é‹­ã„ãƒŠã‚¤ãƒ•");
+        _itemLists[2] = new TestStatusWindowItemData(Resources.Load("Sword", typeof(Sprite)) as Sprite, "ãƒ–ãƒ­ãƒ¼ãƒ‰ã‚½ãƒ¼ãƒ‰", Item.Sword, "å¤§å‰£");
+        _itemLists[3] = new TestStatusWindowItemData(Resources.Load("Gun", typeof(Sprite)) as Sprite, "ãƒãƒ³ãƒ‰ã‚¬ãƒ³", Item.HandGun, "å¨åŠ›æŠœç¾¤ãƒãƒ³ãƒ‰ã‚¬ãƒ³");
     }
 
     public TestStatusWindowItemData[] GetItemData()

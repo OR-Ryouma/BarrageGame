@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,15 +6,15 @@ using UnityEngine.EventSystems;
 
 public class TestButtonEvent : MonoBehaviour
 {
-    //ƒCƒ“ƒtƒHƒ[ƒVƒ‡ƒ“ƒeƒLƒXƒg‚É•\¦‚·‚é•¶š—ñ
+    //ã‚¤ãƒ³ãƒ•ã‚©ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ãƒ†ã‚­ã‚¹ãƒˆã«è¡¨ç¤ºã™ã‚‹æ–‡å­—åˆ—
     [SerializeField]
     private string _informationString;
-    //ƒCƒ“ƒtƒHƒ[ƒVƒ‡ƒ“ƒeƒLƒXƒg
+    //ã‚¤ãƒ³ãƒ•ã‚©ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ãƒ†ã‚­ã‚¹ãƒˆ
     [SerializeField]
     private Text _informationText;
-    //©g‚Ìe‚ÌCanvasGroup
+    //è‡ªèº«ã®è¦ªã®CanvasGroup
     private CanvasGroup _canvasGroup;
-    //‘O‚Ì‰æ–Ê‚É–ß‚éƒ{ƒ^ƒ“
+    //å‰ã®ç”»é¢ã«æˆ»ã‚‹ãƒœã‚¿ãƒ³
     private GameObject _returnButton;
 
     // Start is called before the first frame update
@@ -26,16 +26,16 @@ public class TestButtonEvent : MonoBehaviour
 
     void OnEnable()
     {
-        //‘•”õƒAƒCƒeƒ€‘I‘ğ’†‚ÉƒXƒe[ƒ^ƒX‰æ–Ê‚ğ”²‚¯‚½‚Éƒ{ƒ^ƒ“‚ğ–³Œø‰»‚µ‚½‚Ü‚Ü‚Ìê‡‚à‚ ‚é‚Ì‚Å—§‚¿ã‚°‚É—LŒø‰»‚·‚é
+        //è£…å‚™ã‚¢ã‚¤ãƒ†ãƒ é¸æŠä¸­ã«ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ç”»é¢ã‚’æŠœã‘ãŸæ™‚ã«ãƒœã‚¿ãƒ³ã‚’ç„¡åŠ¹åŒ–ã—ãŸã¾ã¾ã®å ´åˆã‚‚ã‚ã‚‹ã®ã§ç«‹ã¡ä¸Šã’æ™‚ã«æœ‰åŠ¹åŒ–ã™ã‚‹
         GetComponent<Button>().interactable = true;
     }
 
-    //ƒ{ƒ^ƒ“‚Ìã‚Éƒ}ƒEƒX‚ª“ü‚Á‚½A‚Ü‚½‚ÍƒL[‘€ì‚ÅˆÚ“®‚µ‚Ä‚«‚½
+    //ãƒœã‚¿ãƒ³ã®ä¸Šã«ãƒã‚¦ã‚¹ãŒå…¥ã£ãŸæ™‚ã€ã¾ãŸã¯ã‚­ãƒ¼æ“ä½œã§ç§»å‹•ã—ã¦ããŸæ™‚
     public void Onselected()
     {
         if (_canvasGroup == null || _canvasGroup.interactable)
         {
-            //ƒCƒxƒ“ƒgƒVƒXƒeƒ€‚ÌƒtƒH[ƒJƒX‚ª‘¼‚ÌƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚É‚ ‚é‚±‚ÌƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚ÉƒtƒH[ƒJƒX
+            //ã‚¤ãƒ™ãƒ³ãƒˆã‚·ã‚¹ãƒ†ãƒ ã®ãƒ•ã‚©ãƒ¼ã‚«ã‚¹ãŒä»–ã®ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã«ã‚ã‚‹æ™‚ã“ã®ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã«ãƒ•ã‚©ãƒ¼ã‚«ã‚¹
             if (EventSystem.current.currentSelectedGameObject != gameObject)
             {
                 EventSystem.current.SetSelectedGameObject(gameObject);
@@ -44,23 +44,23 @@ public class TestButtonEvent : MonoBehaviour
         }
     }
 
-    //ƒ{ƒ^ƒ“‚©‚çˆÚ“®‚µ‚½î•ñ‚ğíœ
+    //ãƒœã‚¿ãƒ³ã‹ã‚‰ç§»å‹•ã—ãŸæƒ…å ±ã‚’å‰Šé™¤
     public void OnDeselected()
     {
         _informationText.text = "";
     }
 
-    //ƒXƒe[ƒ^ƒXƒEƒCƒ“ƒhƒE‚ğ”ñƒAƒNƒeƒBƒu‚É‚·‚é
+    //ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦ã‚’éã‚¢ã‚¯ãƒ†ã‚£ãƒ–ã«ã™ã‚‹
     public void DisableWindow()
     {
         if (_canvasGroup == null || _canvasGroup.interactable)
         {
-            //ƒEƒCƒ“ƒhƒE‚ğ”ñƒAƒNƒeƒBƒu‚É‚·‚é
+            //ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦ã‚’éã‚¢ã‚¯ãƒ†ã‚£ãƒ–ã«ã™ã‚‹
             transform.root.gameObject.SetActive(false);
         }
     }
 
-    //‘¼‚Ì‰æ–Ê‚ğ•\¦‚·‚é
+    //ä»–ã®ç”»é¢ã‚’è¡¨ç¤ºã™ã‚‹
     public void WindowOnOff(GameObject window)
     {
         if(_canvasGroup == null || _canvasGroup.interactable)
@@ -69,7 +69,7 @@ public class TestButtonEvent : MonoBehaviour
         }
     }
 
-    //‘O‚Ì‰æ–Ê‚É–ß‚éƒ{ƒ^ƒ“‚ğ‘I‘ğó‘Ô‚É‚·‚é
+    //å‰ã®ç”»é¢ã«æˆ»ã‚‹ãƒœã‚¿ãƒ³ã‚’é¸æŠçŠ¶æ…‹ã«ã™ã‚‹
     public void SelectReturnButton()
     {
         EventSystem.current.SetSelectedGameObject(_returnButton);

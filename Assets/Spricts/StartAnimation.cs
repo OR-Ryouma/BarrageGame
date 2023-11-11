@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,7 +17,7 @@ public class StartAnimation : MonoBehaviour
     {
         if(GamesManager._instanceGames._startAnima)
         {
-            _animator.SetBool("Next", true);
+            _animator.SetBool("next", true);
         }
     }
 }

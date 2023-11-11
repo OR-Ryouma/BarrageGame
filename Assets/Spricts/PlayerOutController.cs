@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -26,18 +26,18 @@ public class PlayerOutController : MonoBehaviour
 
     void FixedUpdate()
     {
-        //Player��ViewportPoint�ɒu���錻�ݒn�ix���������j���擾
+        //PlayerのViewportPointに置ける現在地（x方向成分）を取得
         _positionX = _gameCamera.WorldToViewportPoint(_rb2D.position).x;
 
-        //���[�ɏo�邩�A�E�[�ɏo��Ȃ珈�����s��
+        //左端に出るか、右端に出るなら処理を行う
         if(0 > _positionX || _positionX > 1)
         {
             Debug.Log("Going out");
-            //�Q�[�����Player�̈ʒu���X�V���Ċi�[
+            //ゲーム上のPlayerの位置を更新して格納
             _positionX = _rb2D.position.x;
-            //�X�V���W�Ƃ��ėp����Temporary�ʒuVector���쐬
+            //更新座標として用いるTemporary位置Vectorを作成
             Vector3 _tmpUpdate = GameObject.Find("Player").transform.position;
-            //��ʊO�ɏo������x���������ɑ΂��Ă̏���
+            //画面外に出た時のx方向成分に対しての処理
             if(_positionX < 15)
             {
                 _tmpUpdate.x = 25.2f;
@@ -46,7 +46,7 @@ public class PlayerOutController : MonoBehaviour
             {
                 _tmpUpdate.x = 14.8f;
             }
-            //�ʒu�̍X�V
+            //位置の更新
             transform.position = _tmpUpdate;
         }
     }

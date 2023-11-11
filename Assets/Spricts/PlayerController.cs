@@ -1,48 +1,48 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//•K—v‚ÈƒRƒ“ƒ|[ƒlƒ“ƒg‚Ì’è‹`
+//å¿…è¦ãªã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã®å®šç¾©
 [RequireComponent(typeof(Rigidbody2D))]
 
 public class PlayerController : MonoBehaviour
 {
-    //ã‰º¶‰EˆÚ“®‚·‚é—Í
+    //ä¸Šä¸‹å·¦å³ç§»å‹•ã™ã‚‹åŠ›
     float _movePower = 0;
-    //ã‰º¶‰EˆÚ“®‚·‚é—Í(N)
+    //ä¸Šä¸‹å·¦å³ç§»å‹•ã™ã‚‹åŠ›(N)
     [SerializeField] float _movePowerN = 5f;
-    //ã‰º¶‰EˆÚ“®‚·‚é—Í(S)
+    //ä¸Šä¸‹å·¦å³ç§»å‹•ã™ã‚‹åŠ›(S)
     [SerializeField] float _movePowerS = 3f;
 
-    //’eŠÛ‚ÌƒvƒŒƒnƒu
+    //å¼¾ä¸¸ã®ãƒ—ãƒ¬ãƒãƒ–
     [SerializeField] GameObject _bulletPrefab = default;
 
-    //eŒû‚ÌˆÊ’u‚ğİ’è‚·‚éƒIƒuƒWƒFƒNƒg
+    //éŠƒå£ã®ä½ç½®ã‚’è¨­å®šã™ã‚‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
     [SerializeField] Transform _muzzle = default;
 
-    //qƒIƒuƒWƒFƒNƒg‚ÌŠi”[êŠ
+    //å­ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®æ ¼ç´å ´æ‰€
     GameObject _child;
 
     private Rigidbody2D _rb2D = default;
 
-    //•ûŒü‚Ì“ü—Í’l
+    //æ–¹å‘ã®å…¥åŠ›å€¤
     float _horizontal;
     float _vertical;
 
-    //Å‰‚ÉoŒ»‚µ‚½À•W
+    //æœ€åˆã«å‡ºç¾ã—ãŸåº§æ¨™
     Vector3 _initialPosition;
 
     void Start()
     {
         _rb2D = GetComponent<Rigidbody2D>();
         _child = transform.Find("HitClircle").gameObject;
-        // ‰ŠúˆÊ’u‚ğŠo‚¦‚Ä‚¨‚­
+        // åˆæœŸä½ç½®ã‚’è¦šãˆã¦ãŠã
         _initialPosition = this.transform.position;
     }
 
     void Update()
     {
-        // “ü—Í‚ğó‚¯æ‚é
+        // å…¥åŠ›ã‚’å—ã‘å–ã‚‹
         _horizontal = Input.GetAxisRaw("HorizontalLR");
         _vertical = Input.GetAxisRaw("VerticalUD");
 
@@ -69,7 +69,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // —Í‚ğ‰Á‚¦‚é‚Ì‚Í FixedUpdate ‚Ås‚¤
+        // åŠ›ã‚’åŠ ãˆã‚‹ã®ã¯ FixedUpdate ã§è¡Œã†
         _rb2D.velocity = new Vector2(_horizontal * _movePower, _vertical * _movePower);
     }
 }

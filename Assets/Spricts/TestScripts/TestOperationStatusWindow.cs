@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -7,22 +7,23 @@ public class TestOperationStatusWindow : MonoBehaviour
 {
     [SerializeField]
     private GameObject _propertyWindow;
-    //ƒXƒe[ƒ^ƒXƒEƒCƒ“ƒhƒE‚Ì‘S•”‚Ì‰æ–Ê
+    //ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦ã®å…¨éƒ¨ã®ç”»é¢
     [SerializeField]
     private GameObject[] _windowLists;
 
     void Update()
     {
-        //ƒXƒe[ƒ^ƒXƒEƒCƒ“ƒhƒE‚ÌƒIƒ“EƒIƒt
+        //ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦ã®ã‚ªãƒ³ãƒ»ã‚ªãƒ•
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             _propertyWindow.SetActive(!_propertyWindow.activeSelf);
-            //MainWinddow‚ğƒZƒbƒg
+            //MainWinddowã‚’ã‚»ãƒƒãƒˆ
             ChangeWindow(_windowLists[0]);
         }
     }
 
-    //ƒXƒe[ƒ^ƒX‰æ–Ê‚ÌƒEƒCƒ“ƒhƒE‚ÌƒIƒ“EƒIƒtƒƒ\ƒbƒh
+
+    //ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ç”»é¢ã®ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦ã®ã‚ªãƒ³ãƒ»ã‚ªãƒ•ãƒ¡ã‚½ãƒƒãƒ‰
     public void ChangeWindow(GameObject window)
     {
         foreach(var item in _windowLists)
@@ -36,7 +37,7 @@ public class TestOperationStatusWindow : MonoBehaviour
             {
                 item.SetActive(false);
             }
-            //‚»‚ê‚¼‚ê‚ÌƒEƒCƒ“ƒhƒE‚ÌMenuArea‚ÌÅ‰‚Ìq—v‘f‚ğƒAƒNƒeƒBƒu‚Èó‘Ô‚É‚·‚é
+            //ãã‚Œãã‚Œã®ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦ã®MenuAreaã®æœ€åˆã®å­è¦ç´ ã‚’ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ãªçŠ¶æ…‹ã«ã™ã‚‹
             EventSystem.current.SetSelectedGameObject(window.transform.Find("MenuArea").GetChild(0).gameObject);
         }
     }

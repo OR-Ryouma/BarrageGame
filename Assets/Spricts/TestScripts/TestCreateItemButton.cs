@@ -1,53 +1,54 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class TestCreateItemButton : MonoBehaviour
 {
-    //ålŒöƒLƒƒƒ‰‚ÌƒXƒe[ƒ^ƒX
+    //ä¸»äººå…¬ã‚­ãƒ£ãƒ©ã®ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹
     private TestStatusWindowStatus _testStatusWindowStatus;
-    //ƒAƒCƒeƒ€ƒf[ƒ^ƒx[ƒX
+
+    //ã‚¢ã‚¤ãƒ†ãƒ ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹
     private TestStatusWindowItemDataBase _testStatusWindowItemDataBase;
-    //ƒAƒCƒeƒ€ƒ{ƒ^ƒ“‚ÌƒvƒŒƒnƒu
+    //ã‚¢ã‚¤ãƒ†ãƒ ãƒœã‚¿ãƒ³ã®ãƒ—ãƒ¬ãƒãƒ–
     public GameObject _itemPrefab;
-    //ƒAƒCƒeƒ€ƒ{ƒ^ƒ“‚ğ“ü‚ê‚Ä‚¨‚­ƒQ[ƒ€ƒIƒuƒWƒFƒNƒg
+    //ã‚¢ã‚¤ãƒ†ãƒ ãƒœã‚¿ãƒ³ã‚’å…¥ã‚Œã¦ãŠãã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
     private GameObject[] _item;
 
-    //ƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚ªƒAƒNƒeƒBƒu‚É‚È‚Á‚½Às
+    //ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãŒã‚¢ã‚¯ãƒ†ã‚£ãƒ–ã«ãªã£ãŸæ™‚å®Ÿè¡Œ
     void OnEnable()
     {
         _testStatusWindowStatus = Camera.main.GetComponent<TestStatusWindowStatus>();
         _testStatusWindowItemDataBase = Camera.main.GetComponent<TestStatusWindowItemDataBase>();
         _item = new GameObject[_testStatusWindowItemDataBase.GetItemTotal()];
 
-        //ƒAƒCƒeƒ€‘”•ª‚ÌƒAƒCƒeƒ€ƒ{ƒ^ƒ“‚ğì¬
+        //ã‚¢ã‚¤ãƒ†ãƒ ç·æ•°åˆ†ã®ã‚¢ã‚¤ãƒ†ãƒ ãƒœã‚¿ãƒ³ã‚’ä½œæˆ
         for(var i = 0; i < _testStatusWindowItemDataBase.GetItemTotal(); i++)
         {
             _item[i] = GameObject.Instantiate(_itemPrefab) as GameObject;
             _item[i].name = "Item" + i;
-            //ƒAƒCƒeƒ€ƒ{ƒ^ƒ“‚Ìe—v‘f‚ğ‚±‚ÌƒXƒNƒŠƒvƒg‚ªİ’è‚³‚ê‚Ä‚¢‚éƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚É‚·‚é
+            //ã‚¢ã‚¤ãƒ†ãƒ ãƒœã‚¿ãƒ³ã®è¦ªè¦ç´ ã‚’ã“ã®ã‚¹ã‚¯ãƒªãƒ—ãƒˆãŒè¨­å®šã•ã‚Œã¦ã„ã‚‹ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã«ã™ã‚‹
             _item[i].transform.SetParent(transform);
-            //ƒAƒCƒeƒ€‚ğ‚Á‚Ä‚¢‚é‚©‚Ç‚¤‚©
+            //ã‚¢ã‚¤ãƒ†ãƒ ã‚’æŒã£ã¦ã„ã‚‹ã‹ã©ã†ã‹
             if(_testStatusWindowStatus.GetItemFlag(i))
             {
-                //ƒAƒCƒeƒ€ƒf[ƒ^ƒx[ƒX‚Ìî•ñ‚©‚çƒXƒvƒ‰ƒCƒg‚ğæ“¾‚µƒAƒCƒeƒ€ƒ{ƒ^ƒ“‚ÌƒXƒvƒ‰ƒCƒg‚Éİ’è
+                //ã‚¢ã‚¤ãƒ†ãƒ ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã®æƒ…å ±ã‹ã‚‰ã‚¹ãƒ—ãƒ©ã‚¤ãƒˆã‚’å–å¾—ã—ã‚¢ã‚¤ãƒ†ãƒ ãƒœã‚¿ãƒ³ã®ã‚¹ãƒ—ãƒ©ã‚¤ãƒˆã«è¨­å®š
                 _item[i].transform.GetChild(0).GetComponent<Image>().sprite = _testStatusWindowItemDataBase.GetItemData()[i].GetItemSprite();
             }
             else
             {
-                //ƒAƒCƒeƒ€ƒ{ƒ^ƒ“‚ÌUI.Image‚ğ•s‰Â‹‚É‚µAƒ}ƒEƒX‚âƒL[‘€ì‚ÅˆÚ“®t‚É‚æ‚¤‚É‚·‚é
+                //ã‚¢ã‚¤ãƒ†ãƒ ãƒœã‚¿ãƒ³ã®UI.Imageã‚’ä¸å¯è¦–ã«ã—ã€ãƒã‚¦ã‚¹ã‚„ã‚­ãƒ¼æ“ä½œã§ç§»å‹•å¸«ã«ã‚ˆã†ã«ã™ã‚‹
                 _item[i].transform.GetChild(0).GetComponent<Image>().enabled = false;
                 _item[i].transform.GetChild(0).GetComponent<Button>().interactable = false;
             }
-            //ƒ{ƒ^ƒ“‚Éƒ†ƒj[ƒNƒEƒi”Ô†‚ğİ’èiƒAƒCƒeƒ€ƒf[ƒ^ƒx[ƒX”Ô†‚Æ‘Î‰j
+            //ãƒœã‚¿ãƒ³ã«ãƒ¦ãƒ‹ãƒ¼ã‚¯ã‚¦ãƒŠç•ªå·ã‚’è¨­å®šï¼ˆã‚¢ã‚¤ãƒ†ãƒ ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ç•ªå·ã¨å¯¾å¿œï¼‰
             _item[i].transform.GetChild(0).GetComponent<TestItemButton>().SetItemNum(i);
         }
     }
 
     void OnDisable()
     {
-        //ƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚ª”ñƒAƒNƒeƒBƒu‚É‚È‚éì¬‚µ‚½ƒ{ƒ^ƒ“ƒCƒ“ƒXƒ^ƒ“ƒX‚ğíœ
+        //ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãŒéã‚¢ã‚¯ãƒ†ã‚£ãƒ–ã«ãªã‚‹æ™‚ä½œæˆã—ãŸãƒœã‚¿ãƒ³ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’å‰Šé™¤
         for(var i = 0; i < _testStatusWindowItemDataBase.GetItemTotal(); i++)
         {
             Destroy(_item[i]);

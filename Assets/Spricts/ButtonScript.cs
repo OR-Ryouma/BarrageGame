@@ -1,4 +1,4 @@
-using System.Collections;
+Ôªøusing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -72,9 +72,9 @@ public class ButtonScript : MonoBehaviour
     public void QuitButton()
     {
 #if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false; //ÉQÅ[ÉÄÉvÉåÉCèIóπ
+        UnityEditor.EditorApplication.isPlaying = false; //„Ç≤„Éº„É†„Éó„É¨„Ç§ÁµÇ‰∫Ü
 #else
-        Application.Quit();//ÉQÅ[ÉÄÉvÉåÉCèIóπ
+        Application.Quit();//„Ç≤„Éº„É†„Éó„É¨„Ç§ÁµÇ‰∫Ü
 #endif
     }
 
@@ -85,7 +85,7 @@ public class ButtonScript : MonoBehaviour
 
     private IEnumerator WaitCoroutine()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
 
         switch(state)
         {

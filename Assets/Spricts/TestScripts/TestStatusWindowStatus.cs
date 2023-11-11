@@ -1,10 +1,11 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class TestStatusWindowStatus : MonoBehaviour
 {
-    //ƒAƒCƒeƒ€‚ğ‚Á‚Ä‚¢‚é‚©‚Ç‚¤‚©‚Ìƒtƒ‰ƒO
+
+    //ã‚¢ã‚¤ãƒ†ãƒ ã‚’æŒã£ã¦ã„ã‚‹ã‹ã©ã†ã‹ã®ãƒ•ãƒ©ã‚°
     [SerializeField]
     private bool[] _itemFlags = new bool[6];
 
@@ -13,17 +14,17 @@ public class TestStatusWindowStatus : MonoBehaviour
     void Start()
     {
         _testStatusWindowItemDataBase = GetComponent<TestStatusWindowItemDataBase>();
-        SetItemData("‰ù’†“d“”");
-        SetItemData("ƒnƒ“ƒhƒKƒ“");
+        SetItemData("æ‡ä¸­é›»ç¯");
+        SetItemData("ãƒãƒ³ãƒ‰ã‚¬ãƒ³");
     }
 
-    //ƒAƒCƒeƒ€‚ğ‚Á‚Ä‚¢‚é‚©‚Ç‚¤‚©
+    //ã‚¢ã‚¤ãƒ†ãƒ ã‚’æŒã£ã¦ã„ã‚‹ã‹ã©ã†ã‹
     public bool GetItemFlag(int num)
     {
         return _itemFlags[num];
     }
 
-    //ƒAƒCƒeƒ€‚ğƒZƒbƒg
+    //ã‚¢ã‚¤ãƒ†ãƒ ã‚’ã‚»ãƒƒãƒˆ
     public void SetItemData(string name)
     {
         var itemDatas = _testStatusWindowItemDataBase.GetItemData();

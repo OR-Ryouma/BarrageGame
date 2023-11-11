@@ -1,16 +1,17 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class TestStatusWindowItemData : MonoBehaviour
 {
-    //ƒAƒCƒeƒ€‚ÌImage‰æ‘œ
+
+    //ã‚¢ã‚¤ãƒ†ãƒ ã®Imageç”»åƒ
     private Sprite _itemSprite;
-    //ƒAƒCƒeƒ€‚Ì–¼‘O
+    //ã‚¢ã‚¤ãƒ†ãƒ ã®åå‰
     private string _itemName;
-    //ƒAƒCƒeƒ€‚Ìƒ^ƒCƒv
+    //ã‚¢ã‚¤ãƒ†ãƒ ã®ã‚¿ã‚¤ãƒ—
     private TestStatusWindowItemDataBase.Item _itemType;
-    //ƒAƒCƒeƒ€‚Ìî•ñ
+    //ã‚¢ã‚¤ãƒ†ãƒ ã®æƒ…å ±
     private string _itemInfomation;
 
     public TestStatusWindowItemData(Sprite image, string itemName, TestStatusWindowItemDataBase.Item itemType, string information)
