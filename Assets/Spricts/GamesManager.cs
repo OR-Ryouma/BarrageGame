@@ -8,6 +8,20 @@ public class GamesManager : MonoBehaviour
 
     public bool _startAnima;
 
+    public enum Difficulty
+    {
+        Easy,
+        Normal,
+        Hard,
+        Expert,
+        Master,
+        Nightmare,
+        Hell,
+        Evil
+    };
+
+    public Difficulty difficulty = Difficulty.Easy;
+
     private void Awake()
     {
         if (_instanceGames == null)
@@ -20,16 +34,35 @@ public class GamesManager : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+        Debug.Log(difficulty);
+    }
+    
+    public void Difficulties()
     {
-        
+        switch (difficulty)
+        {
+            case Difficulty.Easy:
+                break;
+            case Difficulty.Normal:
+                break;
+            case Difficulty.Hard:
+                break;
+            case Difficulty.Expert:
+                break;
+            case Difficulty.Master:
+                break;
+            case Difficulty.Nightmare:
+                break;
+            case Difficulty.Hell:
+                break;
+            case Difficulty.Evil:
+                break;
+            default:
+                Debug.Log("defailt");
+                break;
+        }
+
+        Debug.Log(difficulty);
     }
 }
