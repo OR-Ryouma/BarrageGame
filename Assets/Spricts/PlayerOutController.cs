@@ -26,11 +26,6 @@ public class PlayerOutController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    void FixedUpdate()
-    {
         switch (GamesManager._instanceGames.limit_Type)
         {
             case GamesManager.Limit_Type.FrameLimit:
